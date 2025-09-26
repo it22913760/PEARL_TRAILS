@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".ProfileActivity">
+
+    <!-- Brand logo to the left of navbar, outside the green pill -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="PearlTrails logo"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/pearltrails_logo_white"
+        tools:src="@drawable/pearltrails_logo_black"/>
+
+    <!-- Sticky top navbar -->
+    <LinearLayout
+        android:id="@+id/navbarTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/bg_navbar_container"
+        android:orientation="horizontal"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:elevation="12dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTabHome"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Home"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@android:color/transparent"
+            app:rippleColor="@android:color/transparent"
+            app:cornerRadius="22dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTabExplore"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Explore"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@android:color/transparent"
+            app:rippleColor="@android:color/transparent"
+            app:cornerRadius="22dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTabProfile"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Profile"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            app:backgroundTint="@color/accent_green"
+            app:rippleColor="@android:color/transparent"
+            app:cornerRadius="22dp"/>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_marginTop="72dp">
+
+            <!-- Profile Header Card (simple container) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_stat_card"
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <FrameLayout
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/bg_profile_avatar">
+                    <ImageView
+                        android:id="@+id/imgAvatarProfile"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        android:tint="#000000"/>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+                    <TextView
+                        android:id="@+id/tvName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Travel Explorer"
+                        android:textColor="@color/text_primary"
+                        android:textStyle="bold"
+                        android:textSize="20sp"/>
+                    <TextView
+                        android:id="@+id/tvBio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sri Lanka Enthusiast"
+                        android:textColor="@color/text_secondary"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@android:drawable/ic_menu_recent_history"
+                            android:tint="@color/accent_green"/>
+                        <TextView
+                            android:id="@+id/tvJoined"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:text="Joined Dec 2024"
+                            android:textColor="@color/text_secondary"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/btnEdit"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_icon_circle"
+                        android:src="@android:drawable/ic_menu_edit"
+                        android:tint="@color/text_primary"
+                        android:contentDescription="Edit"/>
+                    <Space android:layout_width="0dp" android:layout_height="8dp"/>
+                    <ImageButton
+                        android:id="@+id/btnShare"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_icon_circle"
+                        android:src="@android:drawable/ic_menu_share"
+                        android:tint="@color/text_primary"
+                        android:contentDescription="Share"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Add Account CTA (visible when profile cleared) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddAccount"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginTop="12dp"
+                android:text="Add Account"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:visibility="gone"
+                app:backgroundTint="@color/accent_green"
+                app:cornerRadius="22dp"/>
+
+            <!-- Inline Edit Panel -->
+            <LinearLayout
+                android:id="@+id/llEditInline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_stat_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvEditTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Profile"
+                    android:textColor="@color/text_primary"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:boxBackgroundColor="@color/chip_bg"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEditName"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Name"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:boxBackgroundColor="@color/chip_bg"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEditBio"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Bio"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Email (for sign up) -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEditEmailField"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    app:boxBackgroundColor="@color/chip_bg"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEditEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Password (for sign up) -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEditPasswordField"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    app:boxBackgroundColor="@color/chip_bg"
+                    app:boxCornerRadiusTopStart="20dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEditPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_secondary"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="12dp">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnInlineSave"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:text="Save"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        app:backgroundTint="@color/accent_green"
+                        app:cornerRadius="22dp"/>
+                    <Space android:layout_width="12dp" android:layout_height="0dp"/>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnInlineDelete"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:text="Delete"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        app:backgroundTint="#C62828"
+                        app:cornerRadius="22dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Stats grid (two rows, equal weights) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="14dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <include
+                        android:id="@+id/statBookmarks"
+                        layout="@layout/view_profile_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"/>
+                    <include
+                        android:id="@+id/statVisited"
+                        layout="@layout/view_profile_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <include
+                        android:id="@+id/statDays"
+                        layout="@layout/view_profile_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"/>
+                    <include
+                        android:id="@+id/statTrips"
+                        layout="@layout/view_profile_stat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Currency Converter Card -->
+            <LinearLayout
+                android:id="@+id/cardCurrency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_stat_card"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@android:drawable/ic_menu_manage"
+                        android:tint="@color/accent_green"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Currency Converter"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"/>
+                </LinearLayout>
+
+                <!-- From row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"
+                        app:boxBackgroundColor="@color/chip_bg"
+                        app:boxCornerRadiusTopStart="20dp"
+                        app:boxCornerRadiusTopEnd="20dp"
+                        app:boxCornerRadiusBottomStart="20dp"
+                        app:boxCornerRadiusBottomEnd="20dp"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFxAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:inputType="numberDecimal"
+                            android:digits="0123456789."
+                            android:imeOptions="actionDone"
+                            android:hint="100"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_secondary"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="10dp" android:layout_height="0dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"
+                        app:endIconMode="dropdown_menu"
+                        app:boxBackgroundColor="@color/chip_bg"
+                        app:boxCornerRadiusTopStart="20dp"
+                        app:boxCornerRadiusTopEnd="20dp"
+                        app:boxCornerRadiusBottomStart="20dp"
+                        app:boxCornerRadiusBottomEnd="20dp"
+                        app:boxStrokeWidth="0dp"
+                        app:boxStrokeWidthFocused="0dp">
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/etFxFrom"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_secondary"
+                            android:hint="USD"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <!-- Convert button (center) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFxConvert"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="46dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="14dp"
+                    android:text="Convert"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="@color/accent_green"
+                    app:cornerRadius="24dp"
+                    app:rippleColor="@color/accent_green"
+                    app:strokeColor="@color/divider"
+                    app:strokeWidth="1dp"
+                    app:icon="@android:drawable/ic_media_next"
+                    app:iconTint="@android:color/white"
+                    app:iconPadding="8dp"
+                    app:iconGravity="textEnd"
+                    android:elevation="4dp"/>
+
+                <!-- Result -->
+                <TextView
+                    android:id="@+id/tvFxToTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="To Sri Lankan Rupees (LKR)"
+                    android:textColor="@color/text_secondary"/>
+
+                <TextView
+                    android:id="@+id/tvFxResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:padding="12dp"
+                    android:text="Rs. 0.00"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/text_primary"
+                    android:background="@drawable/bg_count_pill"/>
+
+                <!-- Rate info pill -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:background="@drawable/bg_count_pill"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/tvFxRate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1 USD = Rs. 300.00"
+                        android:textColor="@color/text_primary"/>
+                    <TextView
+                        android:id="@+id/tvFxUpdated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Updated --:--"
+                        android:textColor="@color/accent_green"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Exchange rates are approximate and for reference only. Check with banks for exact rates."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAchievementsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Recent Achievements"
+                android:textColor="@color/text_primary"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAchievements"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:overScrollMode="never"
+                android:clipToPadding="false"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                tools:listitem="@layout/item_achievement"/>
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginTop="12dp"
+                android:progress="40"
+                android:progressTint="@color/accent_green"
+                android:backgroundTint="@color/divider"/>
+
+            <!-- Bottom tabs -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnProfileBookmarks"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:text="Bookmarks"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    app:cornerRadius="22dp"
+                    app:backgroundTint="@color/accent_green"/>
+                <Space android:layout_width="8dp" android:layout_height="0dp"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnProfileVisited"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:text="Visited"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_primary"
+                    app:cornerRadius="22dp"
+                    app:strokeColor="@color/divider"
+                    app:strokeWidth="1dp"
+                    app:backgroundTint="@android:color/transparent"/>
+                <Space android:layout_width="8dp" android:layout_height="0dp"/>
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:text="Utilities"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_primary"
+                    app:cornerRadius="22dp"
+                    app:strokeColor="@color/divider"
+                    app:strokeWidth="1dp"
+                    app:backgroundTint="@android:color/transparent"/>
+            </LinearLayout>
+
+            <!-- Profile Places Grid/List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProfilePlaces"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:overScrollMode="never"
+                android:clipToPadding="false"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                tools:listitem="@layout/item_featured"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

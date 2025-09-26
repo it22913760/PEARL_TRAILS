@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <!-- Search field (match homepage style) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSearchAll"
+            style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:boxBackgroundColor="@color/chip_bg"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:boxStrokeColor="@android:color/transparent"
+            app:startIconDrawable="@android:drawable/ic_menu_search"
+            app:startIconTint="@color/text_secondary"
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSearchAll"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Search destinations..."
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Category filters -->
+        <LinearLayout
+            android:id="@+id/llCategoryFilters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAllCat"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="All"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                app:cornerRadius="22dp"
+                app:backgroundTint="@color/accent_green"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCulture"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Culture"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                app:cornerRadius="22dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                app:backgroundTint="@android:color/transparent"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNature"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Nature"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                app:cornerRadius="22dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                app:backgroundTint="@android:color/transparent"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBeaches"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Beaches"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                app:cornerRadius="22dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                app:backgroundTint="@android:color/transparent"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHeritage"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Heritage"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                app:cornerRadius="22dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                app:backgroundTint="@android:color/transparent"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWildlife"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Wildlife"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                app:cornerRadius="22dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                app:backgroundTint="@android:color/transparent"/>
+            <Space android:layout_width="8dp" android:layout_height="0dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScenic"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="Scenic"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                app:cornerRadius="22dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp"
+                app:backgroundTint="@android:color/transparent"/>
+        </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:paddingStart="2dp"
+                android:paddingEnd="8dp"
+                tools:listitem="@layout/item_featured"/>
+
+            <TextView
+                android:id="@+id/tvEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="No results"
+                android:textColor="@color/text_secondary"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Brand logo to the left of navbar, outside the green pill -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="PearlTrails logo"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/pearltrails_logo_white"
+        tools:src="@drawable/pearltrails_logo_black"/>
+
+    <!-- Sticky top navbar (drawn last to be on top) -->
+    <LinearLayout
+        android:id="@+id/navbarTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/bg_navbar_container"
+        android:orientation="horizontal"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:elevation="0dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTabHome"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Home"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@android:color/transparent"
+            app:rippleColor="@android:color/transparent"
+            app:cornerRadius="22dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTabExplore"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Explore"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            app:backgroundTint="@color/accent_green"
+            app:rippleColor="@android:color/transparent"
+            app:cornerRadius="22dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTabProfile"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Profile"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@android:color/transparent"
+            app:rippleColor="@android:color/transparent"
+            app:cornerRadius="22dp"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

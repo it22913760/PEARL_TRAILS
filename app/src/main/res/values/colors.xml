@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Dark theme palette -->
+    <color name="bg">#0B0B0B</color>
+    <color name="surface">#151515</color>
+    <color name="surface_alt">#1E1E1E</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3B3B3</color>
+
+    <!-- Accent and UI -->
+    <color name="accent_green">#B6F36B</color>
+    <color name="accent_green_dark">#9FE250</color>
+    <color name="accent_green_70">#B3B6F36B</color>
+    <color name="chip_bg">#2A2A2A</color>
+    <color name="divider">#242424</color>
+    <color name="star_yellow">#F5D742</color>
+
+    <!-- Category badge colors -->
+    <color name="cat_culture">#FFD54F</color>
+    <color name="cat_nature">#81C784</color>
+    <color name="cat_beaches">#4FC3F7</color>
+    <color name="cat_heritage">#A1887F</color>
+    <color name="cat_wildlife">#66BB6A</color>
+    <color name="cat_scenic">#9575CD</color>
+
+    <!-- Segmented control colors -->
+    <color name="segment_container">#334E5E22</color>
+    <color name="segment_unselected_bg">#00000000</color>
+    <color name="segment_selected_bg">#B6F36B</color>
+    <color name="segment_text_unselected">#E6FFFFFF</color>
+    <color name="segment_text_selected">#000000</color>
+
+    <!-- Glassmorphism -->
+    <color name="glass_bg">#1AFFFFFF</color>
+    <color name="glass_stroke">#33FFFFFF</color>
+    <color name="glass_dark_bg">#1A000000</color>
+</resources>
